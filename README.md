@@ -7,3 +7,6 @@ AERNOUTS Fabien/
 PRUVOST Elisa/
 LINEZ Guillaume/
 VERBRUGGHE Alexis
+
+Lien Trello:
+https://trello.com/b/jPIo0yn4/iut-project-fin-dann%C3%A9e
