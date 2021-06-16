@@ -1,0 +1,75 @@
+body{
+    background-color: #545A6B;
+}
+
+#titre{
+    position: relative;
+    background-color: #424651;
+    border-radius: 75px;
+    width: 500px;
+    height: 150px;
+    top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cadre{
+    position: absolute;
+    background-color: #424651;
+    border-radius: 75px 75px 0px 0px;
+    top: 250px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+#text_style_1{
+    position: relative;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 48px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold
+}
+
+#bouton{
+    position: absolute;
+    background-color: hsl(151, 96%, 55%);
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: table-cell;
+}
+
+#text_style_2{
+    text-align: center;
+    color: hsl(151, 78%, 26%);
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+    font-weight: lighter;
+    top: 50%;
+    transform: translateY(-35%);
+
+}
+
+#bouton:hover{
+    background-color: #09c56a;
+}
+
+#Email{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    font-family: Roboto, sans-serif;
+    font-weight: lighter;
+
+}
+
+
