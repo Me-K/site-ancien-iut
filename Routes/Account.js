@@ -18,11 +18,23 @@ router.get('/', function(req, res) {
 });
 
 // Requete de connexion
-router.get('/login', function(req, res) {
+router.post('/login', function(req, res) {
+
+
     let UniqueId = Globals.uuid.v4();
-    Globals.SavedCookies[UniqueId] = 1
-    res.cookie('TOKEN', UniqueId)
-    res.send("Cookie sent")
+    Globals.SavedCookies[UniqueId] = 1;
+    res.cookie('TOKEN', UniqueId);
+    res.send("Cookie sent").redirect("/account");
+});
+
+// Requete de modification de compte
+router.post('/modification', function(req, res) {
+    
+
+    let UniqueId = Globals.uuid.v4();
+    Globals.SavedCookies[UniqueId] = 1;
+    res.cookie('TOKEN', UniqueId);
+    res.send("Cookie sent").redirect("/account");
 });
 
 module.exports = function(Global){
