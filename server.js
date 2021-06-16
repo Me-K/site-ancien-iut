@@ -4,14 +4,28 @@ const port = 25200;
 
 // CODE
 
+// Setup des librairies de base
 const Express = require("Express");
-const pg = require("pg");
+const {Client} = require("pg");
 const App = Express();
 const fs = require('fs');
 
+// Setup de la table des globals (usage en routing)
 var Globals = {};
-Globals.pg = pg
 
+// Connection postgres
+const client = new Client({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'exam',
+    password: '123',
+    port: 5432,
+})
+client.connect()
+
+Globals.pgClient = client
+
+// Routing
 fs.readdir("./Routes", (err, files) => {
     files.forEach(file => {
         let FileWithoutExtension = file.split('.').slice(0, -1).join('.')
@@ -21,11 +35,7 @@ fs.readdir("./Routes", (err, files) => {
     });
 });
 
-
-//App.get('/', (req, res) => {
-//    res.send("ok");
-//})
-
+// Connection au port d'écoute
 App.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })

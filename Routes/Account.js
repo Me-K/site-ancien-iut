@@ -4,8 +4,11 @@ var Globals = {};
 
 // define the home page route
 router.get('/', function(req, res) {
-  res.send('Birds home page');
+    Globals.pgClient.query("SELECT * FROM compte", function(err, sqlres){
+        res.send(JSON.stringify(sqlres.rows));
+    })
 });
+
 // define the about route
 router.get('/about', function(req, res) {
   res.send('About birds');
