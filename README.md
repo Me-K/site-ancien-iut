@@ -13,6 +13,6 @@ https://trello.com/b/jPIo0yn4/iut-project-fin-dann%C3%A9e
 
 
 Techs utilisées:
-Backend:NodeJS
-Front: HTML/CSS/JS
-Serveur:PostgreSQL
+#Backend:NodeJS
+#Front: HTML/CSS/JS
+#Serveur:PostgreSQL
