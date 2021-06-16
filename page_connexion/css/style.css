@@ -77,7 +77,7 @@ body{
     top: 100px;
     left: 50px;
     font-size: 39;
-
+    padding-left: 10px;
 }
 
 #label_connexion_mdp{
@@ -97,6 +97,7 @@ body{
     top: 300px;
     left: 50px;
     font-size: 39px;
+    padding-left: 10px;
 }
 
 #connexion{
@@ -105,9 +106,9 @@ body{
 
 #mdp_oublie{
     position: relative;
-    top:40%;
+    top:50%;
     left: 50px;
-    text-decoration: none;
+
 }
 
 #txt_mdp_oublie{
