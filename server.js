@@ -10,6 +10,7 @@ const {Client} = require("pg");
 const App = Express();
 const fs = require('fs');
 const uuid = require('uuid');
+const path = require("path");
 
 // Setup Middlewares
 App.set('view engine', 'ejs');
@@ -40,6 +41,11 @@ fs.readdir("./Routes", (err, files) => {
         App.use("/" + FileWithoutExtension.toLowerCase(), require('./Routes/' + FileWithoutExtension)(Globals));
         console.log("Routing", "/" + FileWithoutExtension.toLowerCase())
     });
+});
+
+// Base lib redirects
+App.get("/css/style_modif.css", function(req, res){
+    res.sendFile(path.resolve("./Public/CSS/style.css"))
 });
 
 // Connection au port d'écoute
