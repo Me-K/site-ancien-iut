@@ -1,0 +1,118 @@
+body{
+    background-color: #545A6B;
+    font-family: Segoe UI, Roboto;
+}
+
+#titre{
+    position: relative;
+    background-color: #424651;
+    border-radius: 75px;
+    width: 500px;
+    height: 150px;
+    top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cadre{
+    position: relative;
+    background-color: #424651;
+    border-radius: 75px 75px 75px 75px;
+    width: 30%;
+    height:65%;
+    top: 10%;
+    left: 35%;
+}
+
+#text_style_1{
+    position: relative;
+    color: white;   
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+#bouton{
+    position: absolute;
+    background-color: #21fa90;
+    height: 95px;
+    width: 453px;
+    border-radius: 48px;
+    top: 80%;
+    left: 50px;
+    user-select: none;
+    cursor:pointer;
+}
+
+#text_style_2{
+    position: relative;
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+    font-size: 39px;
+    bottom:25%;
+}
+
+#bouton:hover{
+    background-color: #09c56a;
+}
+
+
+#label_connexion_nom{
+    position: inherit;
+    text-decoration: underline;
+    color: white;
+    font-size: 39;
+    top: 40px;
+    left:15px;
+}
+
+
+#nom{
+    position: absolute;
+    background-color: white;
+    height: 95px;
+    width: 453px;
+    border-radius: 48px;
+    top: 100px;
+    left: 50px;
+    font-size: 39;
+
+}
+
+#label_connexion_mdp{
+    position: inherit;
+    text-decoration: underline;
+    color: white;
+    font-size: 39;
+    top: 160px;
+    left:15px;
+}
+#mdp{
+    position: absolute;
+    background-color: white;
+    height: 95px;
+    width: 453px;
+    border-radius: 48px;
+    top: 300px;
+    left: 50px;
+    font-size: 39px;
+}
+
+#connexion{
+    position: relative;
+}
+
+#mdp_oublie{
+    position: relative;
+    top:40%;
+    left: 50px;
+    text-decoration: none;
+}
+
+#txt_mdp_oublie{
+    text-decoration: none;
+    color: lightblue;
+}

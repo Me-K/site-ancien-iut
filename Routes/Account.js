@@ -6,7 +6,7 @@ var Globals = {};
 router.get('/', function(req, res) {
     var cookie = req.cookies.TOKEN;
     if (!cookie || cookie === undefined || !(cookie in Globals.SavedCookies)) {
-        return res.send("Connectez vous pour récupérer vos infos");
+        return res.render("../Public/HTML/connexion")
     }
     
     Globals.pgClient.query("SELECT * FROM Membre WHERE id_membre = " + Globals.SavedCookies[cookie], function(err, sqlres){
@@ -18,23 +18,30 @@ router.get('/', function(req, res) {
 });
 
 // Requete de connexion
-router.post('/login', function(req, res) {
+router.get('/login', function(req, res) {
+    var Body = req.query
+    if (!Body.mdp || !Body.mail) return res.redirect('/account?' + "error=" + encodeURI("Champ(s) non rempli(s)."));
 
-
-    let UniqueId = Globals.uuid.v4();
-    Globals.SavedCookies[UniqueId] = 1;
-    res.cookie('TOKEN', UniqueId);
-    res.send("Cookie sent").redirect("/account");
+    Globals.pgClient.query("SELECT * FROM Membre WHERE mdp_membre = '" + Body.mdp + "' AND mail_membre = '" + Body.mail + "'", function(err, sqlres){
+        console.log("Connection: mdp_membre = " + Body.mdp + " | mail_membre = " + Body.mail)
+        if (sqlres.rows.length <= 0){
+            return res.redirect('/account?' + "error=" + encodeURIComponent("Mot de passe éronée."));
+        }else{
+            let id_membre = sqlres.rows[0].id_membre
+            let UniqueId = Globals.uuid.v4();
+            Globals.SavedCookies[UniqueId] = id_membre;
+            res.cookie('TOKEN', UniqueId);
+            return res.redirect("/account");
+        }
+    });
 });
 
-// Requete de modification de compte
-router.post('/modification', function(req, res) {
-    
+router.get('/recuppass', function(req, res) {
+    res.render("../Public/HTML/RecupMdp");
+});
 
-    let UniqueId = Globals.uuid.v4();
-    Globals.SavedCookies[UniqueId] = 1;
-    res.cookie('TOKEN', UniqueId);
-    res.send("Cookie sent").redirect("/account");
+router.get('/clear', function(req, res) {
+    res.cookie('TOKEN').redirect('/account');
 });
 
 module.exports = function(Global){

@@ -11,9 +11,11 @@ const App = Express();
 const fs = require('fs');
 const uuid = require('uuid');
 const path = require("path");
+const bodyParser = require('body-parser');
 
 // Setup Middlewares
 App.set('view engine', 'ejs');
+App.use(bodyParser.urlencoded({ extended: true })); // Parse request body
 App.use(require('cookie-parser')()); // Bad practice, but no time :/
 
 // Setup de la table des globals (usage en routing)
@@ -46,6 +48,22 @@ fs.readdir("./Routes", (err, files) => {
 // Base lib redirects
 App.get("/css/style_modif.css", function(req, res){
     res.sendFile(path.resolve("./Public/CSS/style.css"))
+});
+
+App.get("/css/a.css", function(req, res){
+    res.sendFile(path.resolve("./Public/CSS/a.css"))
+});
+
+App.get("/javascript/a.js", function(req, res){
+    res.sendFile(path.resolve("./Public/JS/a.js"))
+});
+
+App.get("/css/b.css", function(req, res){
+    res.sendFile(path.resolve("./Public/CSS/b.css"))
+});
+
+App.get("/javascript/b.js", function(req, res){
+    res.sendFile(path.resolve("./Public/JS/b.js"))
 });
 
 // Connection au port d'écoute
