@@ -9,6 +9,11 @@ const Express = require("Express");
 const {Client} = require("pg");
 const App = Express();
 const fs = require('fs');
+const uuid = require('uuid');
+
+// Setup Middlewares
+App.set('view engine', 'ejs');
+App.use(require('cookie-parser')()); // Bad practice, but no time :/
 
 // Setup de la table des globals (usage en routing)
 var Globals = {};
@@ -20,10 +25,12 @@ const client = new Client({
     database: 'exam',
     password: '123',
     port: 5432,
-})
-client.connect()
+});
+client.connect();
 
-Globals.pgClient = client
+Globals.pgClient = client;
+Globals.SavedCookies = {};
+Globals.uuid = uuid;
 
 // Routing
 fs.readdir("./Routes", (err, files) => {
@@ -38,4 +45,4 @@ fs.readdir("./Routes", (err, files) => {
 // Connection au port d'écoute
 App.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
-})
+});
