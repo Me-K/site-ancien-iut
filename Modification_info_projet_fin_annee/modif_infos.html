@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript"
+            src="javascript/script_modif.js"></script>
+        <title> </title>
+        <link rel="stylesheet" href="css/style_modif.css" type="text/css" />
+      </head>
+    <header>
+    </header>
+
+    <body>
+        <div id="titre">
+            <p id="text_style_1">Les Anciens de l'IUT</p>
+        </div>
+    
+        <div id="cadre">
+            <form action="" id="formulaire">
+                <label for="Entreprise" id="lab_entreprise">Entreprise </label>
+                <input type="text" placeholder="Nom de votre entreprise" id="input_entreprise"><br>
+                <label for="Poste" id="lab_poste">Poste</label>
+                <input type="text" id="input_poste" placeholder="Entrer votre poste"><br>
+                <label for="Description personelle" id="lab_description">Description personelle </label> <br>
+                <textarea name="description" id="input_description" cols="57" rows="20">Entrez votre description personnelle ici</textarea><br>
+                <label for="Visibilité" id="lab_visi">Visibilité</label>
+                <select name="Visibilité" id="input_visibilite">
+                    <option value="tout_le_monde">Tout le monde</option>
+                    <option value="ma_promo">Ma promo</option>
+                    <option value="mes_amis">Mes amis</option>
+                    <option value="5_avant">Les 5 promos avant moi</option>
+                    <option value="3_apres">Les 3 promos aprés moi</option>
+                </select>
+            </form>
+
+            <div id="bouton_confirmer">
+                <p id="text_style_2">Confirmer les modifications</p>
+            </div>
+
+        </div>
+    </body>
+    
+    <footer>
+    </footer>
+</html>
