@@ -15,3 +15,12 @@ Techs utilisées:
 - Backend: **NodeJS**
 - Front: **HTML/CSS/JS**
 - Serveur: **PostgreSQL**
+
+# SETUP
+
+Ouvrir la console node et entrez la commande suivante
+```
+node server.js
+```
+
+Une base de donnée doit être executez sur la machine local et une base de donnée "exam" doit contenir les tables dans le fichier SQL > Table_Creation.sql
