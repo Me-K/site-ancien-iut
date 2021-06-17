@@ -16,9 +16,9 @@ Techs utilisées:
 - Front: **HTML/CSS/JS**
 - Serveur: **PostgreSQL**
 
-# SETUP
+## SETUP
 
-Ouvrir la console node et entrez la commande suivante
+Ouvrir la console node et entrez la commande suivante pour lancer le serveur
 ```
 node server.js
 ```
